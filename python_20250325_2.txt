@@ -2,7 +2,7 @@ while True:
   coin = float(input('동전을 넣으세요.'))
   while (coin > 0) & (coin % 1 == 0):
     print('음료목록 1.오렌지주스(100원), 2.커피(200원), 3.콜라(300원)')
-    drink = int(input('음료를 고르세요.'))
+    drink = float(input('음료를 고르세요.'))
     if drink == 1:
       if coin >= 100:
         remain = coin - 100
