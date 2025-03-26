@@ -34,3 +34,4 @@ while True:
       print('없는 메뉴입니다. 다시 입력해 주세요.')
   if (coin <= 0) | (coin % 1 != 0):
     print('주문할 수 없습니다.')
+  coin = 0
