@@ -1,0 +1,20 @@
+n = float(input('숫자를 입력하세요.'))
+if (n % 1 != 0) | (n <= 0) | (n >= 10):
+  print('Error')
+else:
+  for i in range(1,int(n**(1 / 2) + 0.99999999) + 1):
+    for j in range(1,int(n**(1 / 2) + 0.99999999) - i + 1):
+      print(' ',end = '')
+    if i == int(n**(1 / 2) + 0.99999999):
+      m = int(n - (int(n**(1 / 2) + 0.99999999) - 1)**2)
+      for j in range((int(n**(1 / 2) + 0.99999999) - 1)**2 + 1,m + (int(n**(1 / 2) + 0.99999999) - 1)**2 + 1):
+        print(str(j),end = '')
+    elif i == int(n**(1 / 2) + 0.99999999) - 1:
+      for j in range((int(n**(1 / 2) + 0.99999999) - 2)**2 + 1,(int(n**(1 / 2) + 0.99999999) - 2)**2 + i * 2):
+        print(str(j),end = '')
+    elif i == int(n**(1 / 2) + 0.99999999) - 2:
+      for j in range((int(n**(1 / 2) + 0.99999999) - 3)**2 + 1,(int(n**(1 / 2) + 0.99999999) - 3)**2 + i * 2):
+        print(str(j),end = '')
+    else:
+      print('Error')
+    print()
