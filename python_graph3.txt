@@ -6,6 +6,6 @@ for i in range(0, 2):
   dfi = df.iloc[i]
   plt.plot(dfi, label = 'Brand{}'.format(i + 1))
 plt.xlabel('YEAR-MONTH', size = 20)
-plt.ylabel('Sales', size = 20)
+plt.ylabel('Rate', size = 20)
 plt.legend(ncol = 1)
 plt.show()
