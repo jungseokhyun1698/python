@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_excel('수입(2020~2024) & 국산(2023~2024) 자동차 월별 통합.xlsx', sheet_name = 'Sheet4', header = 0, index_col = 0)
+plt.figure(figsize = (50, 30))
+for i in range(0, 2):
+  dfi = df.iloc[i]
+  plt.plot(dfi, label = 'Brand{}'.format(i + 1))
+plt.xlabel('YEAR-MONTH', size = 20)
+plt.ylabel('Sales', size = 20)
+plt.legend(ncol = 1)
+plt.show()
