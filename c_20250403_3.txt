@@ -10,7 +10,7 @@ int main()
         num[i] = (int)(rand() % 45) + 1;
         for (int j = 0; j < i; j++) {
             if (num[j] == num[i]) {
-                i--
+                i--;
             }
         }
     }
