@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+void main()
+{
+    int score = 0, bonus = 0;
+    char grade;
+    scanf("%d", &score);
+    if (score > 100 | score < 0) {
+        printf("Error");
+    } else {
+        if (score >= 90) {
+            grade = 'A';
+            printf("%c 등급\n", grade);
+        } else if (score >= 80) {
+            grade = 'B';
+            printf("%c 등급\n", grade);
+        } else if (score >= 70) {
+            grade = 'C';
+            printf("%c 등급\n", grade);
+        } else if (score >= 60) {
+            grade = 'D';
+            printf("%c 등급\n", grade);
+        } else {
+            grade = 'F';
+            printf("%c 등급\n", grade);
+        }
+        switch(grade)
+        {
+            case 'A':
+                bonus = (int)score * 0.1;
+                printf("%d점 추가 보너스", bonus);
+                break;
+            case 'B':
+                bonus = (int)score * 0.05;
+                printf("%d점 추가 보너스", bonus);
+                break;
+            case 'C':
+                printf("추가 보너스 없음");
+                break;
+            case 'D':
+                printf("추가 보너스 없음");
+                break;
+            case 'F':
+                printf("추가 보너스 없음");
+                break;
+            default:
+                printf("default");
+        }
+    }
+}
