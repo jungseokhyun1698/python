@@ -4,6 +4,7 @@ void main()
 {
     int score = 0, bonus = 0;
     char grade;
+    printf("시험 점수를 입력하세요.\n");
     scanf("%d", &score);
     if (score > 100 | score < 0) {
         printf("Error");
