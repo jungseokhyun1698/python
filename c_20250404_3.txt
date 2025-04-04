@@ -2,7 +2,8 @@
 
 void main()
 {
-    int score = 0, bonus = 0;
+    int score = 0;
+    float bonus = 0;
     char grade;
     printf("시험 점수를 입력하세요.\n");
     scanf("%d", &score);
@@ -28,21 +29,29 @@ void main()
         switch(grade)
         {
             case 'A':
-                bonus = (int)score * 0.1;
-                printf("%d점 추가 보너스", bonus);
+                bonus = score * 0.1;
+                printf("%4.2f점 추가 보너스\n", bonus);
+                printf("보너스 포함 %4.2f점", score + bonus);
                 break;
             case 'B':
-                bonus = (int)score * 0.05;
-                printf("%d점 추가 보너스", bonus);
+                bonus = score * 0.05;
+                printf("%4.2f점 추가 보너스\n", bonus);
+                printf("보너스 포함 %4.2f점", score + bonus);
                 break;
             case 'C':
-                printf("추가 보너스 없음");
+                bonus = 0;
+                printf("추가 보너스 없음\n");
+                printf("보너스 포함 %4.2f점", score + bonus);
                 break;
             case 'D':
-                printf("추가 보너스 없음");
+                bonus = 0;
+                printf("추가 보너스 없음\n");
+                printf("보너스 포함 %4.2f점", score + bonus);
                 break;
             case 'F':
-                printf("추가 보너스 없음");
+                bonus = 0;
+                printf("추가 보너스 없음\n");
+                printf("보너스 포함 %4.2f점", score + bonus);
                 break;
             default:
                 printf("default");
