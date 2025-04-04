@@ -21,7 +21,6 @@ int main()
                 num1 = num[i];
                 num[i] = num[j];
                 num[j] = num1;
-                
             }
         }
     }
