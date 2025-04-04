@@ -3,6 +3,7 @@
 void main()
 {
     int x = 0, a = 0, b = 0, c = 0, result = 0;
+    printf("숫자를 입력하세요.\n");
     scanf("%d", &x);
     if (x > 999 | x < 0) {
         printf("Error");
