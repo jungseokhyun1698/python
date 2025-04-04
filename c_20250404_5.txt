@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int num[6];
+    srand(time(NULL));
+    for (int i = 0; i < 6; i++) {
+        num[i] = (int)(rand() % 45) + 1;
+        for (int j = 0; j < i; j++) {
+            if (num[j] == num[i]) {
+                i--;
+            }
+        }
+    }
+    int num1 = 0, num2 = 0;
+    for (int i = 0; i < 6; i++) {
+        int num3 = 46;
+        for (int j = i; j < 6; j++) {
+            if (num[j] < num3) {
+                num3 = num[j];
+                num2 = j;
+            }
+        }
+        num1 = num[i];
+        num[i] = num[num2];
+        num[num2] = num1;
+    }
+    for (int i = 0; i < 6; i++) {
+        printf("%d\n", num[i]);
+        sleep(1);
+    }
+}
