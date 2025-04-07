@@ -12,6 +12,7 @@ void main()
     } else {
         switch(grade)
         {
+            case 10:
             case 9:
                 printf("A 등급\n");
                 bonus = score * 0.1;
