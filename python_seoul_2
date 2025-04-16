@@ -1,0 +1,76 @@
+import pandas as pd
+import numpy as np
+import os
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('stotal.csv', encoding='cp949')
+df['버스'] = df['버스'] / 1000000
+df['지하철'] = df['지하철'] / 1000000
+df['택시'] = df['택시'] / 1000000
+df['자전거'] = df['자전거'] / 1000000
+
+years = [2021, 2022, 2023, 2024]
+
+plt.figure(figsize=(20, 18))
+
+p1 = plt.subplot(221)
+p1.plot(df[df['구분'] == 'Downtown']['년도'], df[df['구분'] == 'Downtown']['버스'], color='blue', linestyle=':', marker='o', label='Downtown')
+p1.plot(df[df['구분'] == 'Northeast']['년도'], df[df['구분'] == 'Northeast']['버스'], color='green', linestyle=':', marker='o', label='Northeast')
+p1.plot(df[df['구분'] == 'Northwest']['년도'], df[df['구분'] == 'Northwest']['버스'], color='orange', linestyle=':', marker='o', label='Northwest')
+p1.plot(df[df['구분'] == 'Southwest']['년도'], df[df['구분'] == 'Southwest']['버스'], color='red', linestyle=':', marker='o', label='Southwest')
+p1.plot(df[df['구분'] == 'Southeast']['년도'], df[df['구분'] == 'Southeast']['버스'], color='brown', linestyle=':', marker='o', label='Southeast')
+p1.set_xlabel('year')
+p1.set_ylabel('sum_mill')
+p1.set_xticks(years)
+p1.set_ylim(0, 500)
+p1.set_yticks(range(0, 550, 50))
+p1.set_title("Bus")
+p1.legend()
+p1.grid()
+
+p2 = plt.subplot(222)
+p2.plot(df[df['구분'] == 'Downtown']['년도'], df[df['구분'] == 'Downtown']['지하철'], color='blue', linestyle=':', marker='o', label='Downtown')
+p2.plot(df[df['구분'] == 'Northeast']['년도'], df[df['구분'] == 'Northeast']['지하철'], color='green', linestyle=':', marker='o', label='Northeast')
+p2.plot(df[df['구분'] == 'Northwest']['년도'], df[df['구분'] == 'Northwest']['지하철'], color='orange', linestyle=':', marker='o', label='Northwest')
+p2.plot(df[df['구분'] == 'Southwest']['년도'], df[df['구분'] == 'Southwest']['지하철'], color='red', linestyle=':', marker='o', label='Southwest')
+p2.plot(df[df['구분'] == 'Southeast']['년도'], df[df['구분'] == 'Southeast']['지하철'], color='brown', linestyle=':', marker='o', label='Southeast')
+p2.set_xlabel('year')
+p2.set_ylabel('sum_mill')
+p2.set_xticks(years)
+p2.set_ylim(0, 500)
+p2.set_yticks(range(0, 550, 50))
+p2.set_title("Subway")
+p2.legend()
+p2.grid()
+
+p3 = plt.subplot(223)
+p3.plot(df[df['구분'] == 'Downtown']['년도'], df[df['구분'] == 'Downtown']['택시'], color='blue', linestyle=':', marker='o', label='Downtown')
+p3.plot(df[df['구분'] == 'Northeast']['년도'], df[df['구분'] == 'Northeast']['택시'], color='green', linestyle=':', marker='o', label='Northeast')
+p3.plot(df[df['구분'] == 'Northwest']['년도'], df[df['구분'] == 'Northwest']['택시'], color='orange', linestyle=':', marker='o', label='Northwest')
+p3.plot(df[df['구분'] == 'Southwest']['년도'], df[df['구분'] == 'Southwest']['택시'], color='red', linestyle=':', marker='o', label='Southwest')
+p3.plot(df[df['구분'] == 'Southeast']['년도'], df[df['구분'] == 'Southeast']['택시'], color='brown', linestyle=':', marker='o', label='Southeast')
+p3.set_xlabel('year')
+p3.set_ylabel('sum_mill')
+p3.set_xticks(years)
+p3.set_ylim(0, 100)
+p3.set_yticks(range(0, 110, 10))
+p3.set_title("Taxi")
+p3.legend()
+p3.grid()
+
+p4 = plt.subplot(224)
+p4.plot(df[df['구분'] == 'Downtown']['년도'], df[df['구분'] == 'Downtown']['자전거'], color='blue', linestyle=':', marker='o', label='Downtown')
+p4.plot(df[df['구분'] == 'Northeast']['년도'], df[df['구분'] == 'Northeast']['자전거'], color='green', linestyle=':', marker='o', label='Northeast')
+p4.plot(df[df['구분'] == 'Northwest']['년도'], df[df['구분'] == 'Northwest']['자전거'], color='orange', linestyle=':', marker='o', label='Northwest')
+p4.plot(df[df['구분'] == 'Southwest']['년도'], df[df['구분'] == 'Southwest']['자전거'], color='red', linestyle=':', marker='o', label='Southwest')
+p4.plot(df[df['구분'] == 'Southeast']['년도'], df[df['구분'] == 'Southeast']['자전거'], color='brown', linestyle=':', marker='o', label='Southeast')
+p4.set_xlabel('year')
+p4.set_ylabel('sum_mill')
+p4.set_xticks(years)
+p4.set_ylim(0, 50)
+p4.set_yticks(range(0, 55, 5))
+p4.set_title("Bicycle")
+p4.legend()
+p4.grid()
+
+plt.subplots_adjust(hspace = 0.2)
